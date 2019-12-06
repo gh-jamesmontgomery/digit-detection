@@ -38,8 +38,8 @@ $lastMatchingReading = 0
 $theseMatches= [ordered]@{}
 $theseConfirms= [ordered]@{}
 
-[int64]$milesA = 100
-[int64]$milesB = 10000
+[int64]$milesA = 10000
+[int64]$milesB = 100000
 
 #Randomise the starting trip value
 $thisTrip = Get-Random -Minimum 0 -Maximum 999
@@ -119,6 +119,7 @@ $milesA..$milesB | ForEach-Object {
             
     #Confirm using alternative method above if $confirmFindings = $true
     if($confirmFindings){
+        $lookingForInts = 1.. $thisLength
         $confirmedNumber = testNumber -lookingIn $combinedNumber -lookingFor ($lookingForInts)
     }
 
